@@ -1,0 +1,17 @@
+<!doctype html><html lang="pl"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/><meta name="theme-color" content="#0b1220"/><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-title" content="Cyber Quiz"/><link rel="manifest" href="./manifest.webmanifest"/><link rel="apple-touch-icon" href="./icon-180.png"/><title>Cybersecurity Quiz — Unlock</title><style>
+:root{font-family:-apple-system,BlinkMacSystemFont,system-ui,sans-serif;color-scheme:dark}body{background:#0b1220;color:#eff6ff;min-height:100svh;display:grid;place-items:center;margin:0;padding:25px;box-sizing:border-box}.panel{width:min(100%,430px);padding:32px 24px;background:#152238;border:1px solid #30445e;border-radius:22px;box-shadow:0 18px 50px #0005}.logo{font-size:42px}h1{font-size:24px;margin:12px 0}p{color:#c3d0e0;line-height:1.5}label{font-size:14px;color:#d3e5f8;display:block;margin:24px 0 7px}input{display:block;box-sizing:border-box;width:100%;border-radius:12px;border:1px solid #637b98;background:#091526;color:#fff;padding:15px;font-size:18px}button{width:100%;padding:15px;margin-top:14px;border:0;border-radius:12px;background:#4da8ff;color:#071321;font-size:17px;font-weight:750;cursor:pointer}button:disabled{opacity:.65}#status{min-height:22px;margin:16px 0 0;font-size:14px}.sub{font-size:12px;color:#8ca5c1;margin-top:20px}</style></head><body><main class="panel"><div class="logo" aria-hidden="true">🔐</div><h1>Cybersecurity Quiz</h1><p>Wpisz hasło, aby odszyfrować quiz i rozpocząć naukę.</p><form id="gate"><label for="pass">Hasło do quizu</label><input id="pass" type="password" autocomplete="off" required placeholder="Wpisz hasło"/><button id="open" type="submit">Odblokuj quiz</button><div role="status" id="status" aria-live="polite"></div></form><p class="sub">Pytania i screeny są zaszyfrowane. Hasło nie jest zapisane w pliku aplikacji.</p></main><script>
+if('serviceWorker' in navigator){navigator.serviceWorker.register('./sw.js').catch(()=>{});}
+const form=document.getElementById('gate');const status=document.getElementById('status');const btn=document.getElementById('open');
+form.addEventListener('submit',async ev=>{ev.preventDefault();btn.disabled=true;status.textContent='Odszyfrowywanie quizu…';try{
+const pw=document.getElementById('pass').value;
+const response=await fetch('./quiz.dat');if(!response.ok)throw new Error('Brak zaszyfrowanego pliku quiz.dat.');
+const payload=new Uint8Array(await response.arrayBuffer());
+if(payload.length<50||String.fromCharCode(...payload.slice(0,4))!=='CQP1')throw new Error('Nieprawidłowy format danych.');
+const salt=payload.slice(4,20), iv=payload.slice(20,32),ciphertext=payload.slice(32);
+const base=await crypto.subtle.importKey('raw',new TextEncoder().encode(pw),'PBKDF2',false,['deriveKey']);
+const key=await crypto.subtle.deriveKey({name:'PBKDF2',salt,iterations:650000,hash:'SHA-256'},base,{name:'AES-GCM',length:256},false,['decrypt']);
+const decoded=await crypto.subtle.decrypt({name:'AES-GCM',iv,additionalData:new TextEncoder().encode('CybersecurityQuiz-PWA-v1')},key,ciphertext);
+const markup=new TextDecoder().decode(decoded);
+document.open();document.write(markup);document.close();
+}catch(e){status.textContent=e.name==='OperationError'?'Nieprawidłowe hasło. Spróbuj ponownie.':('Nie udało się otworzyć quizu: '+e.message);btn.disabled=false;}});
+</script></body></html>

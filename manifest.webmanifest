@@ -1,0 +1,24 @@
+{
+  "name": "Cybersecurity Quiz – Full Question Bank",
+  "short_name": "Cyber Quiz",
+  "description": "Offline cybersecurity practice: 382 questions, diagrams and screenshots, randomized or in order.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0b1220",
+  "theme_color": "#0b1220",
+  "icons": [
+    {
+      "src": "./icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
