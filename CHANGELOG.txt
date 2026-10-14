@@ -1,0 +1,13 @@
+Cyber Quiz CHANGELOG
+
+v1.1.0 — Matrix Terminal
+- Full interface redesign in Matrix Terminal theme
+- Updated dashboard, question view, cards and password screen
+- Preserved: 344 questions, screenshots, answer key, password lock, progress, smart review, exam simulator, flashcards, search, sound effects, failed/flagged questions
+
+v1.0.2 — Apple Cyber Pro
+- Updated main title to Cyber Quiz
+- Refreshed password screen background
+
+v1.0.1 — Apple Cyber Pro
+- Fixed sound playback approach for iPhone

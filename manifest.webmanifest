@@ -1,11 +1,11 @@
 {
-  "name": "Cyber Quiz Study Pro",
+  "name": "Cyber Quiz",
   "short_name": "Cyber Quiz",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#0a0c10",
-  "theme_color": "#0a0c10",
+  "background_color": "#010301",
+  "theme_color": "#041109",
   "icons": [
     {
       "src": "./icon-192.png",
