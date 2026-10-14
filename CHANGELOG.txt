@@ -1,13 +1,8 @@
-Cyber Quiz CHANGELOG
+Cyber Quiz v1.2.0 — Apple Cyber
+- New Apple-inspired cybersecurity interface and password screen.
+- Explanation panel resets on each question.
+- Resume uses saved question index; repairs old sessions saved at index zero by jumping to first unanswered question.
+- New original celebratory correct-answer chime inspired by quiz-show atmosphere (not a recording from any TV show).
+- Preserves question bank, screenshots, answer key, incorrect sound, progress and password protection.
 
-v1.1.0 — Matrix Terminal
-- Full interface redesign in Matrix Terminal theme
-- Updated dashboard, question view, cards and password screen
-- Preserved: 344 questions, screenshots, answer key, password lock, progress, smart review, exam simulator, flashcards, search, sound effects, failed/flagged questions
-
-v1.0.2 — Apple Cyber Pro
-- Updated main title to Cyber Quiz
-- Refreshed password screen background
-
-v1.0.1 — Apple Cyber Pro
-- Fixed sound playback approach for iPhone
+v1.1.0 — Matrix Terminal redesign.

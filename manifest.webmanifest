@@ -2,18 +2,17 @@
   "name": "Cyber Quiz",
   "short_name": "Cyber Quiz",
   "start_url": "./",
-  "scope": "./",
   "display": "standalone",
-  "background_color": "#010301",
-  "theme_color": "#041109",
+  "background_color": "#090f19",
+  "theme_color": "#0b1724",
   "icons": [
     {
-      "src": "./icon-192.png",
+      "src": "icon-192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "./icon-512.png",
+      "src": "icon-512.png",
       "sizes": "512x512",
       "type": "image/png"
     }
