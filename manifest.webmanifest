@@ -3,8 +3,8 @@
   "short_name": "Cyber Quiz",
   "start_url": "./",
   "display": "standalone",
-  "background_color": "#090f19",
-  "theme_color": "#0b1724",
+  "background_color": "#03090a",
+  "theme_color": "#03090a",
   "icons": [
     {
       "src": "icon-192.png",

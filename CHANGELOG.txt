@@ -1,8 +1,13 @@
-Cyber Quiz v1.2.0 — Apple Cyber
-- New Apple-inspired cybersecurity interface and password screen.
-- Explanation panel resets on each question.
-- Resume uses saved question index; repairs old sessions saved at index zero by jumping to first unanswered question.
-- New original celebratory correct-answer chime inspired by quiz-show atmosphere (not a recording from any TV show).
-- Preserves question bank, screenshots, answer key, incorrect sound, progress and password protection.
+Cyber Quiz v1.2.2 — Apple Cyber
+- Graficzne tlo cybersecurity: tarcza, siec polaczen, uklady elektroniczne.
+- Nowe tlo na pulpicie, ekranach pytan i ekranie hasla.
+- Zachowano poprawki kontynuacji i automatycznego chowania wyjasnien z v1.2.1.
+- Nowa grafika jest dostepna offline (cyber-background.svg).
 
+Cyber Quiz v1.2.1 — Apple Cyber
+- FIX: Explanation panel stays closed after navigating to another question. Removed a contradictory line that was re-opening it.
+- FIX: Continue studying saves and restores a separate question cursor, including question ID; repairs older sessions stuck at question 1.
+- No changes to questions, screenshots, answers, password, sound effects, visual theme, or other features.
+
+v1.2.0 — Apple Cyber redesign, quiz-show-inspired correct-answer sound.
 v1.1.0 — Matrix Terminal redesign.
